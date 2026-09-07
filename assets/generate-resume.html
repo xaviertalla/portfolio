@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Resume - François Xavier Talla Tamo</title>
+  <style>
+    @media print {
+      body { margin: 0; padding: 15px; font-size: 10pt; color: #000; background: #fff; }
+      .no-print { display: none; }
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #1e293b;
+      line-height: 1.4;
+      padding: 30px;
+      max-width: 850px;
+      margin: 0 auto;
+      background-color: #f8fafc;
+    }
+    .paper {
+      background: #ffffff;
+      padding: 35px 40px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      border: 1px solid #e2e8f0;
+    }
+    .header {
+      border-bottom: 2px solid #0f172a;
+      padding-bottom: 12px;
+      margin-bottom: 18px;
+      text-align: center;
+    }
+    .header h1 {
+      font-size: 1.8rem;
+      color: #0f172a;
+      margin: 0 0 4px 0;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .contact-info {
+      font-size: 0.88rem;
+      color: #334155;
+      font-weight: 500;
+    }
+    .contact-info span {
+      margin: 0 6px;
+    }
+    h2 {
+      font-size: 1.05rem;
+      color: #0f172a;
+      border-bottom: 1px solid #cbd5e1;
+      padding-bottom: 3px;
+      margin-top: 18px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+    .job {
+      margin-bottom: 12px;
+    }
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #0f172a;
+    }
+    .job-sub {
+      display: flex;
+      justify-content: space-between;
+      font-style: italic;
+      font-size: 0.88rem;
+      color: #475569;
+      margin-bottom: 4px;
+    }
+    ul {
+      margin: 0;
+      padding-left: 18px;
+      font-size: 0.88rem;
+    }
+    li {
+      margin-bottom: 3px;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      font-size: 0.88rem;
+    }
+    .skill-cat {
+      margin-bottom: 4px;
+    }
+    .skill-cat strong {
+      color: #0f172a;
+    }
+    .btn-print {
+      background-color: #0f172a;
+      color: #ffffff;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .btn-print:hover {
+      background-color: #1e293b;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="no-print" style="text-align: center;">
+    <button onclick="window.print()" class="btn-print">📄 Save as PDF / Print Resume</button>
+  </div>
+
+  <div class="paper">
+    <div class="header">
+      <h1>François Xavier Talla Tamo, PMP®</h1>
+      <div class="contact-info">
+        Saskatoon, SK, Canada <span>|</span> Fluent in English &amp; French
+      </div>
+    </div>
+
+    <h2>Professional Summary</h2>
+    <p style="font-size: 0.88rem; margin: 0;">
+      Results-driven Information Security &amp; Operations Specialist with expertise in GRC frameworks (NIST CSF 2.0, ISO/IEC 27001), ITIL service management, and telecom infrastructure. Proven track record in managing complex terminal and logistics operations, performing vendor risk assessments, and executing incident response protocols.
+    </p>
+
+    <h2>Core Competencies</h2>
+    <div class="skills-grid">
+      <div>
+        <div class="skill-cat"><strong>Governance &amp; Risk:</strong> NIST CSF 2.0, ISO/IEC 27001, VRAQ, ITIL</div>
+        <div class="skill-cat"><strong>Technical Security:</strong> Cloud Security (Azure), EDR, Incident Response</div>
+      </div>
+      <div>
+        <div class="skill-cat"><strong>Operations &amp; Network:</strong> Cisco Architecture, Telecom Infrastructure</div>
+        <div class="skill-cat"><strong>Languages:</strong> English (Fluent), French (Fluent)</div>
+      </div>
+    </div>
+
+    <h2>Professional Experience</h2>
+
+    <div class="job">
+      <div class="job-header">
+        <span>Terminal Coordinator</span>
+        <span>Feb 2024 – Aug 2026</span>
+      </div>
+      <div class="job-sub">
+        <span>Budbee</span>
+        <span>Netherlands</span>
+      </div>
+      <ul>
+        <li>Managed daily terminal logistics operations, ensuring high availability, operational efficiency, and strict adherence to protocol.</li>
+        <li>Oversee system workflows and technical equipment setups to maintain operational continuity.</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <span>Telecommunications &amp; Network Operations Specialist</span>
+        <span>Prior Roles</span>
+      </div>
+      <div class="job-sub">
+        <span>Telecom / Network Sector</span>
+        <span>International</span>
+      </div>
+      <ul>
+        <li>Administered network infrastructure and telecom operations using ITIL service management principles.</li>
+        <li>Executed incident management and network monitoring to maintain high system uptime.</li>
+      </ul>
+    </div>
+
+    <h2>Education &amp; Credentials</h2>
+
+    <div class="job" style="margin-bottom: 6px;">
+      <div class="job-header">
+        <span>Post-Graduate Certificate in Cyber Security</span>
+        <span>Aug 2026 – Present</span>
+      </div>
+      <div class="job-sub">
+        <span>Saskatchewan Polytechnic</span>
+        <span>Saskatoon, SK</span>
+      </div>
+    </div>
+
+    <div class="job" style="margin-bottom: 6px;">
+      <div class="job-header">
+        <span>Master of Business Administration (MBA)</span>
+        <span>Completed</span>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <span>Bachelor’s Degree in Electronic and Electrical Engineering</span>
+        <span>Completed</span>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

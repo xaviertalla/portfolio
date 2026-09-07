@@ -1,368 +1,583 @@
-<!-- HELLO
--
-DevFolio is a minimal, clean, lightweight and fully responsive template for Devlopers!
-Created by Anil Seervi.
--
-GitHub repo: https://github.com/AnilSeervi/DevFolio
-README: https://github.com/AnilSeervi/DevFolio/blob/master/README.md
--
-Have fun creating your portfolio on this template!!! -->
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>François Xavier Talla | Information Security GRC Specialist</title>
+  <style>
+    /* CSS RESET & VARIABLES */
+    :root {
+      --primary: #0a192f;
+      --secondary: #172a45;
+      --accent: #64ffda;
+      --text-main: #e6f1ff;
+      --text-muted: #8892b0;
+      --bg-card: #112240;
+      --font-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    }
 
-    <!-- Title: add your Portfolio websites's title here -->
-    <title>[Your name here] | Developer</title>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-    <!-- Add some coding keywords below, Ex: (javascript, yourusername, etc) -->
-    <meta name="keywords" content="[username], [name], skill" />
+    body {
+      background-color: var(--primary);
+      color: var(--text-main);
+      font-family: var(--font-stack);
+      line-height: 1.6;
+      padding: 0;
+      margin: 0;
+    }
 
-    <!-- Improve your SEO by adding a small descrption of you -->
-    <meta name="description" content="[Your name here] | Developer" />
+    /* CONTAINER & LAYOUT */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
 
-    <!-- Add a your png Logo to the assets folder and change the href attr accordingly  -->
-    <link rel="icon" type="image/png" href="./assets/devfolio-logo.png" />
+    header {
+      padding: 50px 0 40px 0;
+      text-align: center;
+      background: linear-gradient(180deg, rgba(23,42,69,0.8) 0%, rgba(10,25,47,1) 100%);
+      border-bottom: 1px solid #233554;
+    }
 
-    <!-- Add your primary-theme color for the value of content -->
-    <meta name="theme-color" content="#36d1dc" />
+    /* LOGO HOLDER */
+    .logo-container {
+      margin-bottom: 25px;
+    }
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <!-- Fill content with the URL of this portfolio you'll host -->
-    <meta property="og:url" content="https://devfolio.js.org/" />
-    <!-- Fill content with the title of your portfolio(Recommended to use what you put in <title> tag) -->
-    <meta property="og:title" content="[Your name here] | Developer" />
-    <!-- Give a short description that'll show up when you/someone shares your portfolio on different platform -->
-    <meta property="og:description" content="Made using DevFolio Template" />
-    <!-- Add a thumbnail image in assets folder and fill the content attr with URL to that thumbnail 
-      so that a thumbnail image of your portfolio is shown while shared on other platform -->
-    <meta
-      property="og:image"
-      content="https://devfolio.js.org/assets/devfolio.png"
-    />
+    .logo-img {
+      max-width: 220px;
+      height: auto;
+      border-radius: 6px;
+    }
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <!-- Again fill content attr with the URL of this portfolio you'll host -->
-    <meta property="twitter:url" content="https://devfolio.js.org" />
-    <!-- Recommended to use the same text used within <title> element -->
-    <meta property="twitter:title" content="[Your name here] | Developer" />
-    <!-- short description that shows up while your portfolio is shared -->
-    <meta
-      property="twitter:description"
-      content="Made using DevFolio Template"
-    />
-    <!-- Fill content with the URL to the thumbnail image that you'll put in the assets folder -->
-    <meta
-      property="twitter:image"
-      content="https://anilseervi.vercel.app/assets/devfolio.png"
-    />
+    /* HERO HEADINGS */
+    h1 {
+      font-size: 2.5rem;
+      color: var(--text-main);
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
 
-    <!-- link tags -->
-    <link rel="preload" as="style" href="./css/main.css" />
-    <link rel="stylesheet" href="./css/main.css" />
+    .subtitle {
+      font-size: 1.25rem;
+      color: var(--accent);
+      font-weight: 500;
+      margin-bottom: 15px;
+    }
 
-    <!-- FontAwesome Icons link -->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
-      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
-      crossorigin="anonymous"
-      referrerpolicy="no-referrer"
-    />
-    <script defer src="./javascript/scrollreveal.min.js"></script>
-    <script
-      defer
-      type="text/javascript"
-      src="./javascript/scrollveal.js"
-    ></script>
+    .tagline {
+      color: var(--text-muted);
+      max-width: 650px;
+      margin: 0 auto;
+      font-size: 1rem;
+    }
 
-    <!-- Remove Google Analytics once you have your portfolio website set-up -->
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=UA-122228201-4"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || []
-      function gtag() {
-        dataLayer.push(arguments)
+    /* SECTIONS */
+    section {
+      padding: 60px 0;
+      border-bottom: 1px solid #1d2d50;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      color: var(--text-main);
+      margin-bottom: 25px;
+      position: relative;
+      display: inline-block;
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: -6px;
+      left: 0;
+      width: 40%;
+      height: 3px;
+      background-color: var(--accent);
+    }
+
+    /* ABOUT ME FLEX/GRID WITH PROFILE PICTURE */
+    .about-wrapper {
+      display: flex;
+      flex-direction: row;
+      gap: 30px;
+      align-items: center;
+      background: var(--bg-card);
+      padding: 30px;
+      border-radius: 8px;
+      border: 1px solid #233554;
+    }
+
+    .profile-img-container {
+      flex-shrink: 0;
+      text-align: center;
+    }
+
+    .profile-img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid var(--accent);
+      box-shadow: 0 10px 30px -15px rgba(2,12,27,0.7);
+    }
+
+    .about-text {
+      flex-grow: 1;
+    }
+
+    /* RESPONSIVE LAYOUT FOR MOBILE */
+    @media (max-width: 768px) {
+      .about-wrapper {
+        flex-direction: column;
+        text-align: center;
       }
-      gtag("js", new Date())
+    }
 
-      gtag("config", "UA-122228201-4")
-    </script>
-    <!-- End of Google Analytics -->
-  </head>
-  <body>
-    <!-- Hero Section -->
-    <div id="hero">
-      <section class="container">
-        <h1 class="hero-title">
-          Hi, my name is <span class="text-color-main name">Your Name</span>
-          <br />
-          I'm the Unknown Developer.
-        </h1>
-        <p class="hero-cta">
-          <a class="cta-btn cta-btn--hero" href="#about">Get in touch</a>
-        </p>
-      </section>
-      <a href="#about" class="scroll-down-link" aria-label="scroll-down">
-        <div class="scroll-down"></div
-      ></a>
+    /* SKILLS GRID */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      margin-top: 25px;
+    }
+
+    .skill-card {
+      background: var(--secondary);
+      padding: 20px;
+      border-radius: 6px;
+      border-left: 4px solid var(--accent);
+    }
+
+    .skill-card h3 {
+      font-size: 1.1rem;
+      color: var(--text-main);
+      margin-bottom: 8px;
+    }
+
+    .skill-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    /* PROJECTS */
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+
+    .project-card {
+      background: var(--bg-card);
+      border-radius: 8px;
+      padding: 25px;
+      border: 1px solid #233554;
+    }
+
+    .project-card h3 {
+      color: var(--accent);
+      margin-bottom: 10px;
+    }
+
+    .project-card p {
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    /* CONTACT & CTA */
+    .cta-box {
+      text-align: center;
+      background: var(--bg-card);
+      padding: 40px;
+      border-radius: 8px;
+      border: 1px solid #233554;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 12px 28px;
+      margin: 10px;
+      border-radius: 4px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .btn-primary {
+      background: transparent;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+    }
+
+    .btn-primary:hover {
+      background: rgba(100, 255, 218, 0.1);
+    }
+
+    form {
+      max-width: 600px;
+      margin: 30px auto 0 auto;
+      text-align: left;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--text-main);
+      font-size: 0.9rem;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      background: var(--secondary);
+      border: 1px solid #233554;
+      border-radius: 4px;
+      color: var(--text-main);
+      font-family: inherit;
+    }
+
+    input:focus, textarea:focus {
+      outline: none;
+      border-color: var(--accent);
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 0;
+      color: var(--text-muted);
+      font-size: 0.85rem;
+    }
+  </style>
+  <!-- Font Awesome Icons CDN -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<body>
+
+  <!-- HERO HEADER WITH LOGO -->
+  <header>
+        <div class="container">
+      <div class="logo-container">
+        <!-- Add your logo image file path inside src="..." -->
+        <img src="assets/logo.png" alt="François Xavier Talla Logo" class="logo-img">
+      </div>
+      <h1 contenteditable="true" id="hero-name">François Xavier Talla</h1>
+      <div class="subtitle" contenteditable="true" id="hero-title">Information Security GRC Specialist</div>
+      <p class="tagline" contenteditable="true" id="hero-tagline">
+        Bridging technical engineering and enterprise strategy to build resilient, audit-ready governance frameworks.
+      </p>
     </div>
-    <!-- /END Hero Section -->
+    <div style="margin-top: 15px; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px;">
+  <span style="background: rgba(100, 255, 218, 0.1); border: 1px solid var(--accent); color: var(--accent); padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">
+    PMP® Certified
+  </span>
+  <span style="background: rgba(100, 255, 218, 0.1); border: 1px solid var(--accent); color: var(--accent); padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">
+    Scrum Master
+  </span>
+  <span style="background: var(--secondary); border: 1px solid #233554; color: var(--text-main); padding: 4px 12px; border-radius: 20px; font-size: 0.85rem; font-weight: 600;">
+    Bilingual (English &amp; French)
+  </span>
+</div>
+  </header>
 
-    <!-- About Section -->
+  <div class="container">
+
+    <!-- ABOUT ME SECTION WITH PROFILE PICTURE -->
     <section id="about">
-      <div class="container">
-        <h2 class="section-title">About Me</h2>
-        <div class="row about-wrapper">
-          <div class="about-wrapper__image">
-            <img
-              class="img-fluid"
-              src="./assets/profile.png"
-              alt="Profile Image"
-              width="450"
-              height="350"
-            />
-          </div>
-          <div class="about-wrapper__info">
-            <p class="about-wrapper__info-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit.
-              Temporibus quae repellat, ad omnis distinctio velit saepe expedita
-              architecto cumque veritatis adipisci. Sapiente non, saepe hic
-              adipisci doloribus quisquam recusandae et.
-            </p>
-            <p class="about-wrapper__info-text">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam
-              obcaecati doloribus qui praesentium quae veniam esse mollitia
-              consequuntur nisi minima quasi et fugit quidem enim recusandae
-              delectus, iusto culpa rerum?
-            </p>
-            <span class="about-wrapper__cta">
-              <a href="#" class="cta-btn cta-btn--resume">View Resume</a>
-            </span>
-          </div>
+      <h2>About Me</h2>
+      <div class="about-wrapper">
+        <div class="profile-img-container">
+          <!-- Add your profile photo file path inside src="..." -->
+          <img src="assets/profile.png" alt="François Xavier Talla" class="profile-img">
+        </div>
+        <div class="about-text">
+          <p contenteditable="true" id="about-text-1" style="margin-bottom: 15px;">
+            Welcome! I am an Information Security GRC Specialist dedicated to helping organizations safeguard critical digital assets, maintain regulatory compliance, and align robust technical security practices with overarching business strategies.
+          </p>
+          <p contenteditable="true" id="about-text-2">
+            With an academic foundation in Electronic &amp; Electrical Engineering and a Master of Business Administration, complemented by postgraduate specialization in Cybersecurity at Saskatchewan Polytechnic, I bridge the crucial gap between complex technical operations and executive governance.
+          </p>
         </div>
       </div>
-    </section>
-    <!-- /END About Section -->
 
-    <!--Projects Section-->
+      <!-- CORE COMPETENCIES -->
+      <section id="competencies">
+  <h2>Core Competencies Matrix</h2>
+  <div class="filter-tabs" style="display: flex; gap: 10px; margin-bottom: 25px; flex-wrap: wrap;">
+    <button class="tab-btn active" onclick="filterSkills('all')">All Domains</button>
+    <button class="tab-btn" onclick="filterSkills('grc')">GRC &amp; Compliance</button>
+    <button class="tab-btn" onclick="filterSkills('risk')">Risk Management</button>
+    <button class="tab-btn" onclick="filterSkills('tech')">Technical Architecture</button>
+  </div>
+
+  <div class="skills-grid">
+    <div class="skill-card grc">
+      <h3>GRC &amp; Compliance</h3>
+      <p>NIST CSF 2.0, ISO/IEC 27001:2022, SOC 2 Type II, CIS Controls v8, GDPR mapping.</p>
+    </div>
+    <div class="skill-card risk">
+      <h3>Risk Modeling &amp; TPRM</h3>
+      <p>STRIDE threat modeling, Business Impact Analysis (BIA), and Vendor Risk Assessments.</p>
+    </div>
+    <div class="skill-card tech">
+      <h3>Technical Architecture</h3>
+      <p>Multi-router network convergence, Cisco CLI configuration, firewall policy optimization.</p>
+    </div>
+  </div>
+</section>
+
+<script>
+function filterSkills(category) {
+  document.querySelectorAll('.tab-btn').forEach(btn => btn.classList.remove('active'));
+  event.target.classList.add('active');
+  
+  document.querySelectorAll('.skill-card').forEach(card => {
+    if (category === 'all' || card.classList.contains(category)) {
+      card.style.display = 'block';
+    } else {
+      card.style.display = 'none';
+    }
+  });
+}
+</script>
+<!-- EDUCATION SECTION -->
+    <section id="education">
+      <h2>Education & Academic Background</h2>
+      <div class="skills-grid">
+        
+        <div class="skill-card">
+          <h3>Post-Graduate Certificate in Cyber Security</h3>
+          <p style="color: var(--accent); font-weight: 500;">Saskatchewan Polytechnic</p>
+          <p>Advanced focus on information security governance, threat modeling, cloud infrastructure, and network defense protocols.</p>
+        </div>
+
+        <div class="skill-card">
+          <h3>Master of Business Administration (MBA)</h3>
+          <p style="color: var(--accent); font-weight: 500;">Graduate Degree</p>
+          <p>Executive strategy, corporate governance, financial management, and organizational leadership.</p>
+          </div>
+
+        <div class="skill-card">
+          <h3>Bachelor of Science in Electronic & Electrical Engineering</h3>
+          <p style="color: var(--accent); font-weight: 500;">Undergraduate Degree</p>
+          <p>Core engineering principles, hardware systems, signal processing, and technical infrastructure design.</p>
+        </div>
+<div class="skill-card">
+  <h3>Bilingual Communication</h3>
+  <p><strong style="color: var(--accent);">English &amp; French</strong> — Full Professional Fluency</p>
+  <p>Capable of leading cross-functional audit presentations, risk reports, and executive briefings in both languages.</p>
+</div>
+      </div>
+    </section>
+    <!-- PORTFOLIO / PROJECTS SECTION -->
+    <!-- PORTFOLIO / PROJECTS SECTION -->
+     <section id="certifications">
+  <h2>Certifications &amp; Professional Affiliations</h2>
+  <div class="skills-grid">
+    <div class="skill-card" style="border-left-color: var(--accent);">
+      <h3>Project Management Professional (PMP)®</h3>
+      <p style="color: var(--accent); font-weight: 600;">Project Management Institute (PMI)</p>
+      <p>Strategic program governance, risk management, and enterprise compliance deployment.</p>
+    </div>
+    <div class="skill-card" style="border-left-color: var(--accent);">
+      <h3>Certified Scrum Master (CSM)</h3>
+      <p style="color: var(--accent); font-weight: 600;">Agile &amp; DevSecOps</p>
+      <p>Integrating security governance and compliance stories directly into active sprint cycles.</p>
+    </div>
+    <div class="skill-card">
+      <h3>ISC2 Chapter Member</h3>
+      <p style="color: var(--text-muted);">ISC2 Saskatchewan Chapter</p>
+      <p>Active participant in regional threat intelligence and information security governance initiatives.</p>
+    </div>
+  </div>
+</section>
+<section id="artifacts">
+  <h2>Governance Artifacts &amp; Work Samples</h2>
+  <div class="project-grid">
+    <div class="project-card">
+      <h3>Vendor Risk Assessment Questionnaire (VRAQ)</h3>
+      <p>A standardized 3rd-party vendor evaluation matrix covering data privacy, SOC 2 verification, and cloud security controls.</p>
+      <!-- Download VRAQ Button -->
+<a href="assets/sample-vraq.pdf" download="Vendor_Risk_Assessment_Sample.pdf" 
+   style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; background-color: #0284c7; color: #ffffff; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.9rem; box-shadow: 0 4px 6px rgba(0,0,0,0.3); transition: transform 0.2s, background-color 0.2s; margin-top: 15px;" 
+   title="Download VRAQ Sample">
+  📄 <span style="color: #ffffff;">Download VRAQ</span>
+</a>
+    </div>
+    <div class="project-card">
+      <h3>Incident Response SOP Framework</h3>
+      <p>A step-by-step standard operating procedure for ransomware containment, triage, and stakeholder notification.</p>
+      <!-- Download IR-SOP Button -->
+<a href="assets/sample-ir-sop.pdf" download="Incident_Response_SOP_Sample.pdf" 
+   style="display: inline-flex; align-items: center; gap: 8px; padding: 10px 20px; background-color: #0284c7; color: #ffffff; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.9rem; box-shadow: 0 4px 6px rgba(0,0,0,0.3); transition: transform 0.2s, background-color 0.2s; margin-top: 15px;" 
+   title="Download IR-SOP Sample">
+  🛡️ <span style="color: #ffffff;">Download IR-SOP</span>
+</a></div>
+  </div>
+</section>
+<section id="estimator">
+  <h2>Interactive NIST CSF Readiness Estimator</h2>
+  <div class="about-content">
+    <p style="margin-bottom: 20px; color: var(--text-muted);">Toggle key enterprise controls below to evaluate simulated NIST CSF maturity:</p>
+    
+    <div style="display: flex; flex-direction: column; gap: 12px;">
+      <label><input type="checkbox" class="nist-check" value="20" onclick="calculateScore()"> <strong>ID.AM:</strong> Asset management inventory fully maintained</label>
+      <label><input type="checkbox" class="nist-check" value="20" onclick="calculateScore()"> <strong>PR.AC:</strong> Identity management and access control (MFA / Least Privilege)</label>
+      <label><input type="checkbox" class="nist-check" value="20" onclick="calculateScore()"> <strong>DE.CM:</strong> Continuous security monitoring &amp; vulnerability scanning</label>
+      <label><input type="checkbox" class="nist-check" value="20" onclick="calculateScore()"> <strong>RS.RP:</strong> Incident response plan executed and tested annually</label>
+      <label><input type="checkbox" class="nist-check" value="20" onclick="calculateScore()"> <strong>RC.IM:</strong> Business continuity &amp; disaster recovery plans verified</label>
+    </div>
+
+    <div style="margin-top: 25px; padding: 15px; background: var(--secondary); border-radius: 6px; text-align: center;">
+      <span style="font-size: 1.1rem;">Estimated Compliance Score: </span>
+      <strong id="nist-score" style="color: var(--accent); font-size: 1.4rem;">0%</strong>
+    </div>
+  </div>
+</section>
+
+<script>
+function calculateScore() {
+  let score = 0;
+  document.querySelectorAll('.nist-check:checked').forEach(box => {
+    score += parseInt(box.value);
+  });
+  const scoreElement = document.getElementById('nist-score');
+  scoreElement.innerText = score + '%';
+}
+</script>
+
     <section id="projects">
-      <div class="container">
-        <div class="project-wrapper">
-          <h2 class="section-title dark-blue-text">Projects</h2>
+      <h2>Selected Projects &amp; Case Studies</h2>
+      <div class="project-grid">
+        <!-- New Infrastructure Project Card -->
+        <div class="project-card">
+  <h3>Enterprise Network Infrastructure Deployment (Simulation)</h3>
+  <ul style="list-style: none; padding: 0; margin-top: 10px; font-size: 0.9rem; color: var(--text-muted);">
+    <li style="margin-bottom: 6px;"><strong style="color: var(--text-main);">Situation:</strong> Multi-site enterprise required dynamic routing convergence and secure perimeter controls.</li>
+    <li style="margin-bottom: 6px;"><strong style="color: var(--text-main);">Task:</strong> Architect a scalable, automated multi-router topology with robust access controls.</li>
+    <li style="margin-bottom: 6px;"><strong style="color: var(--text-main);">Action:</strong> Implemented dynamic routing protocols, automated user provisioning, and configured perimeter firewalls.</li>
+    <li style="margin-bottom: 6px;"><strong style="color: var(--text-main);">Result:</strong> Achieved sub-second failover convergence and zero unauthorized access attempts during penetration testing.</li>
+  </ul>
+</div>
 
-          <!-- Each .row is a project -->
-          <article class="row">
-            <div class="project-wrapper__text">
-              <h3 class="project-wrapper__text-title">Project Title</h3>
-              <p class="project-wrapper__text-info">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Deleniti voluptas, sit nam perspiciatis tempore aspernatur ullam
-                necessitatibus impedit repellendus vero sed ipsa eos beatae ab
-                sint saepe nostrum! Enim, perferendis.
-              </p>
-              <div class="project-wrapper__text-btns">
-                <a
-                  href="#"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="cta-btn cta-btn--hero cta-btn--projects"
-                  >See Live</a
-                >
-                <a href="#" target="_blank" class="cta-btn text-color-main"
-                  >Source Code</a
-                >
-              </div>
-            </div>
+        <div class="project-card">
+          <h3>Enterprise NIST CSF Alignment</h3>
+          <p>Developed a complete gap analysis and maturity assessment framework for enterprise technical infrastructure aligned with NIST CSF controls.</p>
+        </div>
 
-            <div class="project-wrapper__image">
-              <a href="#" target="_blank" rel="noopener noreferrer">
-                <div class="thumbnail rounded">
-                  <img
-                    src="./assets/project.png"
-                    class="img-fluid"
-                    alt="Project Image"
-                    width="1366"
-                    height="767"
-                  />
-                </div>
-              </a>
-            </div>
-          </article>
-          <!-- /END Project -->
+        <div class="project-card">
+          <h3>Shadow IT &amp; Vendor Risk Framework</h3>
+          <p>Designed a standardized third-party vendor risk assessment model to detect and evaluate unauthorized cloud utility usage.</p>
+        </div>
 
-          <!-- Each .row is a project -->
-          <article class="row">
-            <div class="project-wrapper__text">
-              <h3 class="project-wrapper__text-title">Project Title</h3>
-              <p class="project-wrapper__text-info">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Deleniti voluptas, sit nam perspiciatis tempore aspernatur ullam
-                necessitatibus impedit repellendus vero sed ipsa eos beatae ab
-                sint saepe nostrum! Enim, perferendis.
-              </p>
-              <div class="project-wrapper__text-btns">
-                <a
-                  href="#"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="cta-btn cta-btn--hero cta-btn--projects"
-                  >See Live</a
-                >
-                <a href="#" target="_blank" class="cta-btn text-color-main"
-                  >Source Code</a
-                >
-              </div>
-            </div>
-
-            <div class="project-wrapper__image">
-              <a href="#" target="_blank" rel="noopener noreferrer">
-                <div class="thumbnail rounded">
-                  <img
-                    src="./assets/project.png"
-                    class="img-fluid"
-                    alt="Project Image"
-                    width="1366"
-                    height="767"
-                  />
-                </div>
-              </a>
-            </div>
-          </article>
-          <!-- /END Project -->
-
-          <!-- Each .row is a project -->
-          <article class="row">
-            <div class="project-wrapper__text">
-              <h3 class="project-wrapper__text-title">Project Title</h3>
-              <p class="project-wrapper__text-info">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Deleniti voluptas, sit nam perspiciatis tempore aspernatur ullam
-                necessitatibus impedit repellendus vero sed ipsa eos beatae ab
-                sint saepe nostrum! Enim, perferendis.
-              </p>
-              <div class="project-wrapper__text-btns">
-                <a
-                  href="#"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  class="cta-btn cta-btn--hero cta-btn--projects"
-                  >See Live</a
-                >
-                <a href="#" target="_blank" class="cta-btn text-color-main"
-                  >Source Code</a
-                >
-              </div>
-            </div>
-
-            <div class="project-wrapper__image">
-              <a href="#" target="_blank" rel="noopener noreferrer">
-                <div class="thumbnail rounded">
-                  <img
-                    src="./assets/project.png"
-                    class="img-fluid"
-                    alt="Project Image"
-                    width="1366"
-                    height="767"
-                  />
-                </div>
-              </a>
-            </div>
-          </article>
-          <!-- /END Project -->
+        <div class="project-card">
+          <h3>ISO 27001 ISMS Implementation</h3>
+          <p>Drafted foundational information security management system (ISMS) policies, access control matrix, and incident response standard operating procedures.</p>
         </div>
       </div>
     </section>
-    <!-- End Projects Section -->
-
-    <!-- Contact Section -->
+    <!-- ========================================================= -->
+        <!-- CALL TO ACTION & CONTACT FORM -->
     <section id="contact">
-      <div class="container">
-        <h2 class="section-title">Contact</h2>
-        <div class="contact-wrapper">
-          <p class="contact-wrapper__text">[Put your call to action here]</p>
-          <a href="#" class="cta-btn cta-btn--resume">Call to Action</a>
+      <div class="cta-box">
+        <h2>Ready to Secure Your Enterprise Architecture?</h2>
+        <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto 20px auto;">
+          Whether you need to align with industry compliance standards or streamline risk management, let's collaborate.
+        </p>
+        
+        <div>
+                    
+          <!-- Resume Download Button -->
+<a href="assets/resume.pdf" download="François_Talla_Resume.pdf" class="btn btn-primary">
+  📄 Download Resume
+</a>
         </div>
+
+        <!-- PERSISTENT FORM -->
+                 <form action="https://formspree.io/f/xkjnqvwb" method="POST">
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name" required placeholder="Your Name" />
+  </div>
+
+  <div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" id="email" name="_replyto" required placeholder="your.email@example.com" />
+  </div>
+
+  <div class="form-group">
+    <label for="message">Message</label>
+    <textarea id="message" name="message" rows="5" required placeholder="Write your message here..."></textarea>
+  </div>
+
+  <button type="submit" class="btn btn-primary">Send Message</button>
+  <!-- HIGH-CONTRAST PROFESSIONAL SOCIAL LINKS -->
+<div class="social-links" style="display: flex; gap: 100px; margin-top: 10px; margin-bottom: 25px; margin-left: 250px; align-items: center; justify-content: flex-start; flex-wrap: wrap;">
+  
+  <!-- LinkedIn Link -->
+  <a href="https://www.linkedin.com/in/francois-xavier-talla-40075735/" target="_blank" rel="noopener noreferrer" 
+     style="display: inline-flex; align-items: center; gap: 10px; padding: 10px 20px; background-color: #0a66c2; color: #ffffff; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.95rem; box-shadow: 0 4px 6px rgba(0,0,0,0.3); transition: transform 0.2s, background-color 0.2s;"
+     title="LinkedIn Profile">
+    <i class="fab fa-linkedin" style="font-size: 1.2rem; color: #ffffff;"></i>
+    <span>LinkedIn</span>
+  </a>
+
+  <!-- GitHub Link -->
+  <a href="https://github.com/xaviertalla" target="_blank" rel="noopener noreferrer" 
+     style="display: inline-flex; align-items: center; gap: 10px; padding: 10px 20px; background-color: #24292e; color: #ffffff; border: 1px solid #64ffda; border-radius: 6px; text-decoration: none; font-weight: 600; font-size: 0.95rem; box-shadow: 0 4px 6px rgba(0,0,0,0.3); transition: transform 0.2s, background-color 0.2s;"
+     title="GitHub Profile">
+    <i class="fab fa-github" style="font-size: 1.2rem; color: #64ffda;"></i>
+    <span style="color: #ffffff;">GitHub</span>
+  </a>
+
+</div>
+</form>
       </div>
     </section>
-    <!-- END Contact Section -->
 
-    <!-- Footer Section -->
-    <footer class="footer">
-      <div class="container">
-        <a href="#hero" class="back-to-top" aria-label="go back to top">
-          <i class="fa fa-angle-up fa-2x" aria-hidden="true"></i>
-        </a>
-        <div class="social-links">
-          <a
-            href="#!"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="twitter"
-          >
-            <i class="fa-brands fa-twitter"></i>
-          </a>
-          <a
-            href="#!"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="instagram"
-          >
-            <i class="fa-brands fa-instagram"></i>
-          </a>
-          <a
-            href="#!"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="codepen"
-          >
-            <i class="fa-brands fa-codepen"></i>
-          </a>
-          <a
-            href="#!"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="linkedin"
-          >
-            <i class="fa-brands fa-linkedin"></i>
-          </a>
-          <a
-            href="#!"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="github"
-          >
-            <i class="fa-brands fa-github"></i>
-          </a>
-        </div>
-        <hr />
-        <p class="footer__text">
-          &copy; <span id="year"></span> - Template by
-          <a
-            href="https://github.com/AnilSeervi"
-            target="_blank"
-            rel="noopener noreferrer"
-            >Anil Seervi</a
-          >. <br />Made with &hearts;
-        </p>
-      </div>
-    </footer>
-    <!-- END Footer Section -->
+  </div>
 
-    <script>
-      document.getElementById("year").textContent = new Date().getFullYear()
-    </script>
-    <script src="./javascript/vanilla-tilt.min.js"></script>
-    <script type="text/javascript" src="./javascript/valtilt.js"></script>
-  </body>
+  <footer>
+    <div class="container">
+      <p>&copy; 2026 François Xavier Talla. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- AUTOMATIC PERSISTENCE SCRIPT (LOCALSTORAGE) -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Auto-save Form Inputs
+      const formFields = document.querySelectorAll('input, textarea');
+      formFields.forEach(field => {
+        const savedValue = localStorage.getItem('field_' + field.id);
+        if (savedValue) field.value = savedValue;
+
+        field.addEventListener('input', () => {
+          localStorage.setItem('field_' + field.id, field.value);
+        });
+      });
+
+      // 2. Auto-save Editable Text Areas (ContentEditable)
+      const editables = document.querySelectorAll('[contenteditable="true"]');
+      editables.forEach(el => {
+        const savedText = localStorage.getItem('text_' + el.id);
+        if (savedText) el.innerText = savedText;
+
+        el.addEventListener('input', () => {
+          localStorage.setItem('text_' + el.id, el.innerText);
+        });
+      });
+    });
+  </script>
+
+</body>
 </html>

@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Standard Operating Procedure: Incident Response (IR-SOP)</title>
+  <style>
+    @media print {
+      body { margin: 0; padding: 20px; font-size: 11pt; color: #000; background: #fff; }
+      .no-print { display: none; }
+      .page-break { page-break-before: always; }
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #1e293b;
+      line-height: 1.5;
+      padding: 40px;
+      max-width: 850px;
+      margin: 0 auto;
+      background-color: #f8fafc;
+    }
+    .paper {
+      background: #ffffff;
+      padding: 40px;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      border: 1px solid #e2e8f0;
+    }
+    .header {
+      border-bottom: 3px solid #0f172a;
+      padding-bottom: 15px;
+      margin-bottom: 25px;
+    }
+    .header h1 {
+      font-size: 1.5rem;
+      color: #0f172a;
+      margin: 0 0 5px 0;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .meta-bar {
+      display: flex;
+      justify-content: space-between;
+      font-size: 0.85rem;
+      color: #475569;
+      font-weight: 600;
+    }
+    h2 {
+      font-size: 1.1rem;
+      color: #0f172a;
+      border-bottom: 1px solid #cbd5e1;
+      padding-bottom: 5px;
+      margin-top: 25px;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.3px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 15px;
+      font-size: 0.88rem;
+    }
+    th, td {
+      border: 1px solid #cbd5e1;
+      padding: 8px 12px;
+      text-align: left;
+    }
+    th {
+      background-color: #f1f5f9;
+      color: #0f172a;
+      font-weight: 600;
+    }
+    .phase-box {
+      border: 1px solid #cbd5e1;
+      border-left: 4px solid #0284c7;
+      padding: 12px 15px;
+      margin-bottom: 12px;
+      background-color: #f8fafc;
+      border-radius: 0 4px 4px 0;
+    }
+    .phase-title {
+      font-weight: 700;
+      color: #0f172a;
+      font-size: 0.95rem;
+      margin-bottom: 5px;
+    }
+    ul {
+      margin: 0;
+      padding-left: 20px;
+      font-size: 0.88rem;
+    }
+    li {
+      margin-bottom: 4px;
+    }
+    .approval-box {
+      background-color: #f8fafc;
+      border: 2px solid #0f172a;
+      padding: 15px;
+      border-radius: 6px;
+      margin-top: 25px;
+      font-family: monospace;
+      font-size: 0.85rem;
+    }
+    .btn-print {
+      background-color: #0f172a;
+      color: #ffffff;
+      border: none;
+      padding: 12px 24px;
+      font-size: 1rem;
+      font-weight: 600;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .btn-print:hover {
+      background-color: #1e293b;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="no-print" style="text-align: center;">
+    <button onclick="window.print()" class="btn-print">📄 Save as PDF / Print Document</button>
+  </div>
+
+  <div class="paper">
+    <div class="header">
+      <h1>Standard Operating Procedure: Cybersecurity Incident Response</h1>
+      <div class="meta-bar">
+        <span>Doc ID: SOP-IR-2026-V2</span>
+        <span>Classification: Internal / Policy</span>
+        <span>Framework: NIST SP 800-61 Rev. 2</span>
+      </div>
+    </div>
+
+    <h2>1. Document Control & Executive Summary</h2>
+    <table>
+      <tr>
+        <th style="width: 30%;">Document Title</th>
+        <td>Cybersecurity Incident Response Standard Operating Procedure (IR-SOP)</td>
+      </tr>
+      <tr>
+        <th>Effective Date</th>
+        <td>September 1, 2026</td>
+      </tr>
+      <tr>
+        <th>Document Owner</th>
+        <td>Information Security Lead / CSIRT Lead</td>
+      </tr>
+      <tr>
+        <th>Scope</th>
+        <td>All enterprise networks, cloud workloads, assets, and personnel globally.</td>
+      </tr>
+      <tr>
+        <th>Primary Objective</th>
+        <td>Minimize operational disruption, contain adversary activity, enforce legal/regulatory compliance, and preserve digital evidence during security incidents.</td>
+      </tr>
+    </table>
+
+    <h2>2. Incident Severity Classification Framework</h2>
+    <table>
+      <thead>
+        <tr>
+          <th style="width: 15%;">Severity Level</th>
+          <th style="width: 45%;">Impact Criteria</th>
+          <th style="width: 20%;">Response SLA</th>
+          <th style="width: 20%;">Escalation Target</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><strong>SEV-1 (Critical)</strong></td>
+          <td>Active ransomware, domain compromise, mass PII/data exfiltration, complete service outage.</td>
+          <td><strong>&lt; 15 Minutes</strong></td>
+          <td>CISO, Executive Team, Legal Counsel</td>
+        </tr>
+        <tr>
+          <td><strong>SEV-2 (High)</strong></td>
+          <td>Single server compromise, unauthorized privileged access, contained malware outbreak.</td>
+          <td><strong>&lt; 1 Hour</strong></td>
+          <td>Security Lead, IT Infrastructure Lead</td>
+        </tr>
+        <tr>
+          <td><strong>SEV-3 (Medium)</strong></td>
+          <td>Isolated phishing attempt with credential submission, missing critical patches.</td>
+          <td><strong>&lt; 4 Hours</strong></td>
+          <td>SOC Tier 2 / Security Analyst</td>
+        </tr>
+        <tr>
+          <td><strong>SEV-4 (Low)</strong></td>
+          <td>Policy violation, routine adware/malware block on endpoint.</td>
+          <td><strong>&lt; 24 Hours</strong></td>
+          <td>SOC Tier 1 Analyst</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>3. Incident Response Life Cycle (NIST SP 800-61 Phase Execution)</h2>
+
+    <div class="phase-box">
+      <div class="phase-title">Phase 1: Preparation</div>
+      <ul>
+        <li>Maintain central SIEM logging (60-day hot retention, 365-day cold archive).</li>
+        <li>Deploy Endpoint Detection and Response (EDR) agents to 100% of managed hosts.</li>
+        <li>Conduct mandatory quarterly tabletop IR exercises for the CSIRT team.</li>
+      </ul>
+    </div>
+
+    <div class="phase-box">
+      <div class="phase-title">Phase 2: Detection &amp; Analysis</div>
+      <ul>
+        <li>Triage alerts from EDR, SIEM, and CloudTrail within designated Severity SLAs.</li>
+        <li>Perform triage to confirm IOCs (IP addresses, file hashes, C2 communications).</li>
+        <li>Scope lateral movement using active memory analysis and forensic log correlation.</li>
+      </ul>
+    </div>
+
+    <div class="phase-box">
+      <div class="phase-title">Phase 3: Containment, Eradication &amp; Recovery</div>
+      <ul>
+        <li><strong>Short-Term Containment:</strong> Isolate compromised hosts via EDR agent isolation; revoke compromised Kerberos/OAuth tokens immediately.</li>
+        <li><strong>Eradication:</strong> Terminate malicious processes, delete unauthorized scheduled tasks/services, and patch exploited vulnerabilities.</li>
+        <li><strong>Recovery:</strong> Restore system state from verified clean backups, validate telemetry, and conduct phased network re-entry.</li>
+      </ul>
+    </div>
+
+    <div class="phase-box">
+      <div class="phase-title">Phase 4: Post-Incident Activity</div>
+      <ul>
+        <li>Hold formal Lessons Learned meeting within 72 hours of incident closure.</li>
+        <li>Draft Post-Incident Report (PIR) identifying root cause, timeline, and remediation actions.</li>
+        <li>Update SOC detection rules and threat models based on new TTPs identified.</li>
+      </ul>
+    </div>
+
+    <h2>4. Governance Approval & Audit Sign-Off</h2>
+    <div class="approval-box">
+      <strong>SOP APPROVAL &amp; AUTHORIZATION</strong><br>
+      ----------------------------------------------------------------------------------<br>
+      Prepared By: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;François Xavier Talla Tamo, PMP®<br>
+      Role: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Information Security Specialist<br>
+      Approval Date: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;September 1, 2026<br>
+      Review Cycle: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Annual (Next Scheduled Review: Q3 2027)<br><br>
+      AUTHORIZATION:<br>
+      This Standard Operating Procedure has been reviewed and formally approved for enterprise operational use. Compliance with this document is mandatory for all Information Technology and Cybersecurity personnel.<br>
+      ----------------------------------------------------------------------------------<br>
+      Author Signature: F.X. Talla Tamo &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date: Sep 1, 2026
+    </div>
+  </div>
+
+</body>
+</html>
