@@ -1,6 +1,6 @@
 
--GitHub repo: https://github.com/AnilSeervi/DevFolio
-README: https://github.com/AnilSeervi/DevFolio/blob/master/README.md
+-GitHub repo: https://github.com/xaviertalla/DevFolio
+README: https://github.com/xaviertalla/DevFolio/blob/master/README.md
 
 <h1 align="center"> ⚡️ DevFolio ⚡️</h1>
 
