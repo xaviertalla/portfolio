@@ -1,3 +1,25 @@
+# Interactive GRC & Cybersecurity Portfolio
+
+Live Site: [https://xaviertalla.github.io/portfolio/](https://xaviertalla.github.io/portfolio/)
+
+## Overview
+This repository contains my personal Governance, Risk, and Compliance (GRC) and Information Security portfolio, hosted via GitHub Pages with automated CI/CD deployment. 
+
+It highlights practical security artifacts, compliance frameworks, and interactive assessment tools:
+* **Interactive NIST CSF 2.0 Readiness Estimator:** Models enterprise security control maturity and identifies compliance gaps.
+* **Vendor Risk Assessment Questionnaire (VRAQ):** Standardized third-party vendor evaluation matrix (`sample-vraq.pdf`).
+* **Incident Response SOP:** Standard operating procedures for ransomware containment and threat isolation (`sample-ir-sop.pdf`).
+* **Professional Resume:** Downloadable executive resume (`resume.pdf`).
+* **Contact Integration:** Formspree API integration for secure direct communication.
+
+## Tech Stack
+* **Frontend:** HTML5, CSS3, JavaScript, Bootstrap
+* **CI/CD & Hosting:** Git, GitHub Actions, GitHub Pages
+* **Form Backend:** Formspree API
+
+## Acknowledgements & Credits
+* Base template design based on **DevFolio** by [Anil Seervi](https://github.com/AnilSeervi).
+* Content, GRC artifacts, interactive logic, and automated CI/CD pipeline customized and maintained by **François Xavier Talla Tamo**. 
 
 -GitHub repo: https://github.com/xaviertalla/DevFolio
 README: https://github.com/xaviertalla/DevFolio/blob/master/README.md
@@ -307,9 +329,10 @@ $secondary-color: #5b86e5;
 - [ScrollReveal.js](https://scrollrevealjs.org/) - JavaScript library
 - [Tilt.js](https://gijsroge.github.io/tilt.js/) - JavaScript tiny parallax library
 
-## Authors
+## Authors & Contributors
 
-- **Anil Seervi** - [https://github.com/AnilSeervi](https://github.com/AnilSeervi)
+- **Anil Seervi** - *Original Template Author* - [GitHub](https://github.com/AnilSeervi)
+- **François Xavier Talla Tamo** - *Customization, GRC Artifacts & Deployment* - [GitHub Portfolio](https://xaviertalla.github.io/portfolio/)
 
 ## License 📄
 
@@ -317,8 +340,6 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Acknowledgments 🎁
 
-I was motivated and inspired while learning [ZTM: Complete Web Developer](https://www.udemy.com/course/the-complete-web-developer-zero-to-mastery/) to create a simpler version of [simplefolio](https://github.com/cobidev/simplefolio) for those who didn't know node and packages.
-
----
-
-<h2 align="center">Have Fun Creating Your Own Portfolio Website.</h2>
+* Based on the open-source **DevFolio** template by [Anil Seervi](https://github.com/AnilSeervi).
+* Inspired by [simplefolio](https://github.com/cobidev/simplefolio) and the [Zero To Mastery](https://www.udemy.com/course/the-complete-web-developer-zero-to-mastery/) curriculum.
+* Customized with interactive NIST CSF 2.0 readiness modeling and GRC compliance artifacts for Information Security governance.
